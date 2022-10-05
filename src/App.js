@@ -53,8 +53,9 @@ function App() {
       setIndex(-2)
     } else {
       setIndex(index)
-      // Identify the chart
-      hotjar.identify('CHART_ID', { name_chart: data.name });
+      if (hotjar.initialized()) {
+        hotjar.identify('CHART_ID', { name_chart: data.name });
+      }
       // Add an event
       hotjar.event('button-click-chart');
     }
