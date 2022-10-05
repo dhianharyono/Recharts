@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { hotjar } from 'react-hotjar';
 
 hotjar.initialize(3183815, 6);
+// Identify the user
+hotjar.identify('USER_ID', { userProperty: 'dhian' });
 
 ReactDOM.render(
   <React.StrictMode>
