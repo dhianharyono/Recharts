@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LabelList} from 'recharts';
+import { hotjar } from 'react-hotjar';
 
 function App() {
   const [activeIndex, setIndex] = useState(-2);
@@ -48,7 +49,13 @@ function App() {
   ]
 
   const handleClick = (data, index) => {
-    setIndex(index)
+    if (activeIndex === index){
+      setIndex(-2)
+    } else {
+      // Identify the user
+      hotjar.identify('CHART_ID', { name_chart: index });
+      setIndex(index)
+    }
   };
 
   return (
