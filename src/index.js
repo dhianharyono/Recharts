@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { hotjar } from 'react-hotjar';
+
+hotjar.initialize(3183815, 6);
 
 ReactDOM.render(
   <React.StrictMode>
