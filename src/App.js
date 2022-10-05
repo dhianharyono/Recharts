@@ -52,9 +52,11 @@ function App() {
     if (activeIndex === index){
       setIndex(-2)
     } else {
-      // Identify the user
-      hotjar.identify('CHART_ID', { name_chart: index });
       setIndex(index)
+      // Identify the chart
+      hotjar.identify('CHART_ID', { name_chart: data.name });
+      // Add an event
+      hotjar.event('button-click-chart');
     }
   };
 
