@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { hotjar } from 'react-hotjar';
 
-hotjar.initialize(3183815, 6);
+hotjar.initialize(3189561, 6);
 // Identify the user
 hotjar.identify('USER_ID', { user_id: 'dhian' });
 
