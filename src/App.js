@@ -50,16 +50,15 @@ function App() {
 
   const handleClick = (data, index) => {
     if (activeIndex === index){
-      hotjar.event('button-click-chart-uncheck');
       setIndex(-2)
+      hotjar.identify('CHART_ID', { chart_name: data.name });
+      // Add an event
+      hotjar.event('button-click-uncheck-index');
     } else {
       setIndex(index)
-      if (hotjar.initialized()) {
-        hotjar.identify('CHART_ID', { name_chart: data.name });
-        hotjar.identify('VALUE_ID', { value_chart: data.value });
-      }
+      hotjar.identify('CHART_ID', { chart_name: data.name });
       // Add an event
-      hotjar.event('button-click-chart');
+      hotjar.event('button-click-check-chart');
     }
   };
 

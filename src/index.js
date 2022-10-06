@@ -7,7 +7,7 @@ import { hotjar } from 'react-hotjar';
 
 hotjar.initialize(3183815, 6);
 // Identify the user
-hotjar.identify('USER_ID', { userProperty: 'dhian' });
+hotjar.identify('USER_ID', { user_id: 'dhian' });
 
 ReactDOM.render(
   <React.StrictMode>
